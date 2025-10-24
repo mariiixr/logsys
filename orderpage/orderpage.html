@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos | LOGSYS</title>
+    <!-- Geologica Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Geologica', sans-serif; }
+        .font-geologica { font-family: 'Geologica', sans-serif; }
+        .shadow-soft { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .bg-lightgray { background: #F6F7F9; }
+        .bg-accentgreen { background: #53F2B8; }
+        .text-accentgreen { color: #53F2B8; }
+        .hover\:bg-accentgreen-dark:hover { background: #53F2B8; }
+        .bg-graybtn { background: #E5E7EB; }
+    </style>
+</head>
+<body class="bg-[#F6F7F9] font-geologica">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-black text-white z-50 shadow-soft">
+        <nav class="flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/logsyswhite.png" alt="logo" class="h-[25px] ml-10"/>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="hidden md:flex gap-6 ml-8">
+                <li><a href="../initialpage/index.html" class="text-accentgreen font-semibold hover:underline">Home</a></li>
+            </ul>
+            <!-- Right Icons -->
+            <div class="flex items-center gap-4">
+                <!-- User -->
+                <button class="p-2 rounded-full hover:bg-gray-800 transition">
+                    <svg width="22" height="22" fill="none" stroke="#53F2B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0113 0"/></svg>
+                </button>
+                <!-- Settings -->
+                <button class="p-2 rounded-full hover:bg-gray-800 transition"></button>
+                    <svg width="22" height="22" fill="none" stroke="#53F2B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v.09a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 px-2 md:px-8 max-w-5xl mx-auto">
+        <!-- Order Summary -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-accentgreen mb-2 font-geologica">Pedido Nº 12345</h2>
+                    <div class="flex gap-6 text-black font-geologica">
+                        <div><span class="font-semibold">Data:</span> 10/06/2024</div>
+                        <div><span class="font-semibold">Status:</span> Processando</div>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-4 md:mt-0">
+                    <button class="bg-accentgreen text-white font-semibold px-6 py-2 rounded-lg shadow-soft transition hover:bg-accentgreen-dark font-geologica">Salvar</button>
+                    <button class="bg-graybtn text-gray-700 font-semibold px-6 py-2 rounded-lg shadow-soft transition hover:bg-gray-400 font-geologica">Cancelar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Information -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <h3 class="text-lg font-bold text-black mb-4 font-geologica">Informações do Cliente</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-semibold mb-1">Nome Completo</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="João da Silva" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">CPF ou CNPJ</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="123.456.789-00" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Email</label>
+                    <input type="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="joao@email.com" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Telefone</label>
+                    <input type="tel" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="(11) 99999-9999" />
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block font-semibold mb-1">Endereço</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica mb-2" placeholder="Rua Exemplo, 123" />
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                        <input type="text" class="px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="Complemento" />
+                        <input type="text" class="px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="Cidade" />
+                        <input type="text" class="px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="Estado" />
+                        <input type="text" class="px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="CEP" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Information (Dynamic) -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <h3 class="text-lg font-bold text-black mb-4 font-geologica">Informações dos Produtos</h3>
+            <div id="product-list" class="flex flex-col gap-4">
+                <!-- Product Row Template -->
+                <div class="product-row grid grid-cols-1 md:grid-cols-7 gap-2 items-center">
+                    <!-- Product Select -->
+                    <div>
+                        <label class="block font-semibold mb-1">Produto</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accentgreen transition font-geologica">
+                            <option>Produto A</option>
+                            <option>Produto B</option>
+                            <option>Produto C</option>
+                        </select>
+                    </div>
+                    <!-- SKU (Random, not editable) -->
+                    <div>
+                        <label class="block font-semibold mb-1">Código/SKU</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-gray-100 text-gray-600 font-geologica" value="" readonly />
+                    </div>
+                    <!-- Quantity (Integer only) -->
+                    <div>
+                        <label class="block font-semibold mb-1">Qtd. unitária</label>
+                        <input type="number" min="1" step="1" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accentgreen transition font-geologica quantity-input" placeholder="1" />
+                    </div>
+                    <!-- Unit Price (Float only) -->
+                    <div>
+                        <label class="block font-semibold mb-1">Valor unitário</label>
+                        <input type="number" min="0" step="0.01" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accentgreen transition font-geologica price-input" placeholder="10.50" />
+                    </div>
+                    <!-- Discount (Integer only) -->
+                    <div>
+                        <label class="block font-semibold mb-1">Desconto</label>
+                        <input type="number" min="0" step="1" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accentgreen transition font-geologica discount-input" placeholder="0" />
+                    </div>
+                    <!-- Total per Item (auto-calculated) -->
+                    <div>
+                        <label class="block font-semibold mb-1">Total Item</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-gray-100 text-gray-600 font-geologica total-input" value="0.00" readonly />
+                    </div>
+                    <!-- Remove Button -->
+                    <div class="flex items-end h-full">
+                        <button type="button" class="remove-product bg-graybtn text-gray-700 px-3 py-2 rounded-lg shadow-soft transition hover:bg-gray-400 font-semibold focus:outline-none hidden">
+                            Remover
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Product Button -->
+            <div class="mt-4">
+                <button id="add-product-btn" type="button"
+                    class="bg-accentgreen text-white font-semibold px-6 py-2 rounded-lg shadow-soft transition hover:bg-accentgreen-dark focus:outline-none font-geologica">
+                    Adicionar Produto
+                </button>
+            </div>
+        </section>
+
+        <!-- Payment Details -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <h3 class="text-lg font-bold text-black mb-4 font-geologica">Detalhes do Pagamento</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-semibold mb-1">Método de Pagamento</label>
+                    <select class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica">
+                        <option>Cartão de Crédito</option>
+                        <option>PIX</option>
+                        <option>Boleto</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Parcelas</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="3x de R$ 100,00" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Status do Pagamento</label>
+                    <select class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica">
+                        <option>Pago</option>
+                        <option>Pendente</option>
+                        <option>Recusado</option>
+                        <option>Reembolsado</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logistics & Delivery -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <h3 class="text-lg font-bold text-black mb-4 font-geologica">Logística & Entrega</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-semibold mb-1">Transportadora</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="ExemploTrans" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Tipo de Frete</label>
+                    <select class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica">
+                        <option>Padrão</option>
+                        <option>Expresso</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Valor do Frete</label>
+                    <input type="number" min="0" step="0.01" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="25.00" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Prazo Estimado</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="3 dias úteis" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Código de Rastreamento</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="TRK123456" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Status da Entrega</label>
+                    <select class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica">
+                        <option>Em trânsito</option>
+                        <option>Entregue</option>
+                        <option>Atrasado</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Invoice -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <h3 class="text-lg font-bold text-black mb-4 font-geologica">Nota Fiscal</h3>
+            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                <div>
+                    <label class="block font-semibold mb-1">NF-e Nº</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="987654321" />
+                </div>
+                <div>
+                    <button class="bg-accentgreen text-white font-semibold px-6 py-2 rounded-lg shadow-soft transition hover:bg-accentgreen-dark font-geologica mt-2 md:mt-0">
+                        Ver NF-e
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- After-Sales -->
+        <section class="bg-lightgray rounded-2xl shadow-soft mb-8 p-6">
+            <h3 class="text-lg font-bold text-black mb-4 font-geologica">Pós-Venda</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-semibold mb-1">Data envio pesquisa satisfação</label>
+                    <input type="date" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Solicitação de devolução/troca</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="Nenhuma" />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Informações de garantia</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 font-geologica" placeholder="12 meses" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-gray-500 font-geologica">
+        &copy; 2025 LOGSYS. Todos os direitos reservados.
+    </footer>
+
+    <!-- Product Section Script -->
+    <script>
+        // Utility: Generate random SKU between 1 and 5
+        function randomSKU() {
+            return Math.floor(Math.random() * 5) + 1;
+        }
+
+        // Calculate total per item
+        function calculateTotal(row) {
+            const qty = parseInt(row.querySelector('.quantity-input').value) || 0;
+            let price = row.querySelector('.price-input').value.replace(',', '.');
+            price = parseFloat(price) || 0;
+            const discount = parseInt(row.querySelector('.discount-input').value) || 0;
+            let total = qty * price;
+            if (discount > 0) {
+                total = total - (total * (discount / 100));
+            }
+            row.querySelector('.total-input').value = total.toFixed(2);
+        }
+
+        // Initialize first product row
+        document.addEventListener('DOMContentLoaded', function () {
+            const firstRow = document.querySelector('.product-row');
+            firstRow.querySelector('input[type="text"]').value = randomSKU();
+            firstRow.querySelector('.remove-product').style.display = 'none';
+
+            // Calculate total on input
+            firstRow.querySelectorAll('.quantity-input, .price-input, .discount-input').forEach(input => {
+                input.addEventListener('input', () => calculateTotal(firstRow));
+            });
+        });
+
+        // Add Product Button Handler
+        document.getElementById('add-product-btn').addEventListener('click', function () {
+            const productList = document.getElementById('product-list');
+            const template = productList.querySelector('.product-row');
+            const newRow = template.cloneNode(true);
+
+            // Set new random SKU
+            newRow.querySelector('input[type="text"]').value = randomSKU();
+
+            // Clear input fields
+            newRow.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+            newRow.querySelector('.total-input').value = '0.00';
+
+            // Show remove button for new rows
+            newRow.querySelector('.remove-product').style.display = 'block';
+
+            // Remove handler
+            newRow.querySelector('.remove-product').onclick = function () {
+                newRow.remove();
+            };
+
+            // Add calculation listeners
+            newRow.querySelectorAll('.quantity-input, .price-input, .discount-input').forEach(input => {
+                input.addEventListener('input', () => calculateTotal(newRow));
+            });
+
+            productList.appendChild(newRow);
+        });
+
+        // Input validation for integers and floats
+        document.getElementById('product-list').addEventListener('input', function (e) {
+            const input = e.target;
+            if (input.classList.contains('quantity-input') || input.classList.contains('discount-input')) {
+                input.value = input.value.replace(/[^\d]/g, '');
+            }
+            if (input.classList.contains('price-input')) {
+                input.value = input.value.replace(',', '.');
+            }
+        });
+    </script>
+</body>
+</html>
