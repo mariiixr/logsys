@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylelogin.css">
+    <title>logSYS</title>
+
+</head>
+
+<body>
+  <img id="logo" src="logsyslogo.png" alt="LogSYS Logo">
+
+  <div id="bloco">
+    <h1>Entrar na sua conta</h1>
+    <div id="criaracc"><p>ou crie sua conta</p></div>
+
+
+    <form id="loginForm">
+      <div id="userbox">
+        <input type="text" id="usuario" placeholder="Digite seu usuário" required>
+      </div>
+      <div id="userpassword">
+        <input type="password" id="senha" placeholder="Digite sua senha" required>
+      </div>
+
+      <input id="checkbox" type="checkbox">
+      <label id="frase" for="checkbox">Lembrar do meu acesso</label>
+
+      <div id="loginbutton">
+        <button type="submit">Entrar</button>
+      </div>
+    </form>
+
+    <div id="logingoogle">
+      <button><img id="Google" src="icongoogle.png">Entrar com o Google</button>
+    </div>
+  </div>
+
+  <div id="miojo">
+    <p>Esqueceu a senha ou usuário?</p>
+  </div>
+
+  <div id="pao">
+    <hr>
+    <p>ou continue em</p>
+    <hr>
+  </div>
+
+  <div id="logflow">
+    <button>Entre no LogFLOW</button>
+  </div>
+
+  <!-- ⚙️ Script colocado no final do body -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const usuario = document.getElementById('usuario').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+
+      if (usuario === 'USUARIO' && senha === '1234') {
+        // Redireciona para a página inicial
+        window.location.href = '/initialpage/index.html';
+      } else {
+        alert('Usuário ou senha incorretos.');
+      }
+    });
+  </script>
+</body>
+</html>
